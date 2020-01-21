@@ -1,8 +1,7 @@
 package com.di.samples.service;
 
-/**
- * Created by User on 12.01.2020.
- */
+import org.springframework.stereotype.Service;
+
 public class HelloWorldMessageProvider implements MessageProvider {
     @Override
     public String getMessage() {

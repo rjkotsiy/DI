@@ -1,6 +1,6 @@
 package com.di.samples;
 
-import com.di.samples.service.MessageProvider;
+import com.di.samples.service.MessageRender;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 /**
@@ -9,10 +9,11 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class TestDI {
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:app-context.xml");
+        ctx.load("classpath:app-context-annotation.xml");
+//        ctx.load("classpath:app-context.xml");
         ctx.refresh();
 
-        MessageProvider messageProvider = ctx.getBean("messageProvider", MessageProvider.class);
-        System.out.println(messageProvider.getMessage());
+        MessageRender messageRender = ctx.getBean("messageRender", MessageRender.class);
+        System.out.println(messageRender.getMessageProvider().getMessage());
     }
 }

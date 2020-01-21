@@ -1,12 +1,14 @@
 package com.di.samples.service;
 
-/**
- * Created by User on 12.01.2020.
- */
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("messageRender")
 public class StdMessageRenderer implements MessageRender {
 
     private MessageProvider messageProvider;
 
+    @Autowired
     @Override
     public void setMessageProvider(MessageProvider messageProvider) {
         this.messageProvider = messageProvider;
